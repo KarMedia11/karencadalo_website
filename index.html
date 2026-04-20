@@ -37,6 +37,7 @@
   </head>
 
   <body>
+    <canvas id="galaxy-canvas"></canvas>
     <!-- ===== Navbar ===== -->
     <nav>
       <div class="nav-container">
@@ -80,7 +81,9 @@
 
     <!-- ===== Main Section ===== -->
     <section id="home">
+      
       <div class="main-container">
+        
         <div class="content">
           <h1 class="typewriter"><span id="typed-text"></span></h1>
           <p>
@@ -101,7 +104,7 @@
           <span class="desktop-text">
             <!-- 😊 Check all my designs on  
             <a href="https://www.figma.com/design/hL1GI6TYrV6LgQvMmEANWe/Email-Output?node-id=0-1&t=eUxhUlbqZPxXDjyF-1" target="_blank">Figma ↗ </a>  -->
-            <!-- <br > 📱Mobile: Tap and hold to reveal the effect -->
+            <br > 📱Mobile: Tap and hold to reveal the effect
         
           <span class="mobile-text">
             
@@ -214,16 +217,16 @@
       <div class="about-container">
         <!-- LEFT: TEXT -->
         <div class="about-text">
-          <h2>Hey there, I'm <span class="highlight">Kar.</span></h2>
+          <h2>Hey there, <span class="highlight">glad you're here!</span></h2>
 
           <p>
-            I’m a self-taught email graphic designer with a keen eye for detail and a focus on clean, 
+            I’m a self-taught email graphic designer and klaviyo implementer with a keen eye for detail and a focus on clean, 
             engaging visuals. 
           </p>
-          <p>
-            I believe communication is key when partnering with teams and clients; it sets clear expectations for me to design and implement email layouts in Klaviyo independently,
+          <!-- <p>
+            I believe communication is key when partnering with teams and clients; <br /> it sets clear expectations for me to design and implement email layouts in Klaviyo independently,
              making it sure every visual and function aligns in a way that is deserving of the brand and its target goals.
-          </p>
+          </p> -->
           <p>
             Outside of work, you’ll probably find me reading an interesting & helpful book or doing watercolor art while listening to music which are both creative outlets that keep me inspired.
           </p>
@@ -231,6 +234,7 @@
           <p>
             Always happy to connect and chat about all things email design! ⭐
           </p>
+          
 
           <!-- <p>
                 I'm eager to apply my skills in real-world projects and
@@ -238,34 +242,41 @@
             </p> -->
 
           
-          <div class="tools">
-            <p>Tools I've worked with:</p>
-            <h3>  Photoshop &nbsp; Figma &nbsp; Klaviyo </h3>
-          </div>
+            <div class="tools">
+              <p>Tools I've worked with:</p>
+              <span>Photoshop</span>
+              <span>Figma</span>
+              <span>Klaviyo</span>
+            </div>
         </div>
 
         <!-- RIGHT: IMAGE -->
         <div class="about-image">
-          <img src="me.png" alt="Karen" />
+          <img src="about-me.jpg" alt="Karen" />
         </div>
       </div>
     </section>
     <section id="contact">
+      
       <div class="contact-container">
         <form id="contact-form">
           <h1>Let’s Craft Your Next Campaign 🚀</h1>
-          <input type="text" name="name" placeholder="Your Name" required />
+          <!-- <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea
             name="message"
             placeholder="Your Message"
             required
           ></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+          <button type="submit">Send Message</button> -->
+          <!-- Calendly inline widget begin -->
 
+        </form>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/cadalo-karen/15-min-discovery-call" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
         <div class="follow-me">
-          <h2>Contact With Karen</h2>
+          <h2>Socials</h2>
         
           <div class="social-row">
             <div class="social-links">
@@ -294,6 +305,7 @@
               <a href="cadalo.karen@gmail.com">cadalo.karen@gmail.com</a>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -307,12 +319,11 @@
     <script>
       // Typed.js initialization
       const typed = new Typed("#typed-text", {
-        strings: ["Email Designer", "Klaviyo Design Implementer"],
-        typeSpeed: 100,
+        strings: ["Hey there, Karen here"],
+        typeSpeed: 60,
         backSpeed: 50,
-        backDelay: 1000,
-        loop: true,
-        smartBackspace: true,
+
+      
         showCursor: true,
         cursorChar: "|",
       });
@@ -477,84 +488,7 @@
       });
     </script> -->
 
-    <script>
-      // 4-button poll + email capture on click
-      const subscribeTab = document.getElementById("subscribe-tab");
 
-      subscribeTab.addEventListener("click", () => {
-        Swal.fire({
-          title: "Quick Question!",
-          html: `
-                      <p style="margin-bottom:15px;">What matters most in an email design?</p>
-                    <div id="poll-buttons" style="display:flex; flex-direction:column; gap:10px;">
-                        <button class="swal2-confirm-option">Clean design</button>
-                        <button class="swal2-confirm-option">High conversions</button>
-                        <button class="swal2-confirm-option">Brand consistency</button>
-                        <button class="swal2-confirm-option">Mobile-friendly</button>
-                    </div>
-            `,
-          showConfirmButton: false,
-          showCancelButton: true,
-          cancelButtonText: "No, thanks, I want to explore your portfolio",
-          cancelButtonColor: "#F2F9FF", // your brand color
-          customClass: {
-            cancelButton: "underline-cancel",
-            confirmButton: "confirm", // custom CSS class for styling
-          },
-          didOpen: () => {
-            const buttons = Swal.getPopup().querySelectorAll(
-              ".swal2-confirm-option"
-            );
-            buttons.forEach((button) => {
-              button.addEventListener("click", () => {
-                const pollChoice = button.innerText;
-                Swal.close();
-
-                // Email popup
-                Swal.fire({
-                  title: "Nice choice 👍",
-                  html: `
-                  <p>Want a free email design based on your answer?</p>
-                  <input type="email" id="swal-email" class="swal2-input custom-swal-input" placeholder="Enter your email">
-                  <small style="color:#ccc; display:block; margin-top:5px; font-size: 11px">
-                    Your email is safe with me and I comply with the <b>Data Privacy Act of 2012</b>.
-                    </small>
- `,
-                  confirmButtonText: "SEND MY FREE DESIGN",
-                  confirmButtonColor: "#00F7FF",
-                  showCancelButton: true,
-                  cancelButtonText:
-                    "<br>No, thanks, I want to explore your portfolio",
-                  cancelButtonColor: "#F2F9FF", // your brand color
-                  customClass: {
-                    cancelButton: "underline-cancel",
-                    confirmButton: "confirm", // custom CSS class for styling
-                  },
-                  preConfirm: () => {
-                    const email =
-                      Swal.getPopup().querySelector("#swal-email").value;
-                    if (!email)
-                      Swal.showValidationMessage(`Please enter your email`);
-                    return { email, pollChoice };
-                  },
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    const { email, pollChoice } = result.value;
-                    window.sendPollData({ email, pollChoice });
-
-                    Swal.fire(
-                      "Thanks! 😊",
-                      `I’ll send the email design sample to you shortly.`,
-                      "success"
-                    );
-                  }
-                });
-              });
-            });
-          },
-        });
-      });
-    </script> 
 
     <div class="footerBottom">
       <p>
@@ -562,5 +496,244 @@
         <span class="designer">Karen C.</span>
       </p>
     </div>
+
+<script>
+const canvas = document.getElementById('galaxy-canvas');
+const ctx = canvas.getContext('2d');
+
+let W, H, stars = [], nebulae = [], shootingStars = [], particles = [];
+let mx = 0, my = 0, px, py, angle = -Math.PI / 2;
+
+function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    if (px === undefined) { px = W / 2; py = H / 2; }
+}
+
+function initStars() {
+    stars = [];
+    for (let i = 0; i < 280; i++) {
+        stars.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 1.8 + 0.2,
+            alpha: Math.random() * 0.7 + 0.3,
+            speed: Math.random() * 0.15 + 0.02,
+            twinkleSpeed: Math.random() * 0.02 + 0.005,
+            twinkleDir: Math.random() > 0.5 ? 1 : -1,
+            color: ['#ffffff','#cce8ff','#ffe8cc','#e8ccff'][Math.floor(Math.random() * 4)]
+        });
+    }
+    nebulae = [];
+    const nebulaColors = [
+        'rgba(0,100,255,0.04)',
+        'rgba(120,0,200,0.05)',
+        'rgba(0,200,180,0.04)',
+        'rgba(200,50,100,0.035)'
+    ];
+    for (let i = 0; i < 6; i++) {
+        nebulae.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 250 + 120,
+            color: nebulaColors[i % nebulaColors.length]
+        });
+    }
+}
+
+function spawnShootingStar() {
+    if (shootingStars.length < 3 && Math.random() < 0.004) {
+        shootingStars.push({
+            x: Math.random() * W,
+            y: Math.random() * H * 0.5,
+            len: Math.random() * 120 + 60,
+            speed: Math.random() * 8 + 5,
+            alpha: 1,
+            angle: Math.PI / 5
+        });
+    }
+}
+
+function spawnExhaust(x, y, ang) {
+    const exhaustAng = ang + Math.PI / 2 + Math.PI;
+    for (let i = 0; i < 2; i++) {
+        const spread = (Math.random() - 0.5) * 0.6;
+        const speed = Math.random() * 1.5 + 0.5;
+        particles.push({
+            x, y,
+            vx: Math.cos(exhaustAng + spread) * speed,
+            vy: Math.sin(exhaustAng + spread) * speed,
+            life: 1,
+            size: Math.random() * 3 + 1,
+            color: Math.random() > 0.5 ? '255,160,0' : '0,247,255'
+        });
+    }
+}
+
+function drawRocket(x, y, ang) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(ang + Math.PI / 2);
+    ctx.scale(0.7, 0.7);
+
+    // Body
+    ctx.beginPath();
+    ctx.moveTo(0, -22);
+    ctx.bezierCurveTo(8, -10, 8, 4, 6, 14);
+    ctx.lineTo(-6, 14);
+    ctx.bezierCurveTo(-8, 4, -8, -10, 0, -22);
+    ctx.fillStyle = '#e8f4ff';
+    ctx.fill();
+
+    // Window
+    ctx.beginPath();
+    ctx.arc(0, -4, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#00f7ff';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,247,255,0.4)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Left fin
+    ctx.beginPath();
+    ctx.moveTo(-6, 8);
+    ctx.lineTo(-14, 18);
+    ctx.lineTo(-6, 14);
+    ctx.closePath();
+    ctx.fillStyle = '#00a8b5';
+    ctx.fill();
+
+    // Right fin
+    ctx.beginPath();
+    ctx.moveTo(6, 8);
+    ctx.lineTo(14, 18);
+    ctx.lineTo(6, 14);
+    ctx.closePath();
+    ctx.fillStyle = '#00a8b5';
+    ctx.fill();
+
+    // Flame outer
+    ctx.beginPath();
+    ctx.moveTo(-5, 14);
+    ctx.quadraticCurveTo(0, 28 + Math.random() * 6, 5, 14);
+    ctx.fillStyle = 'rgba(255,140,0,0.85)';
+    ctx.fill();
+
+    // Flame inner
+    ctx.beginPath();
+    ctx.moveTo(-3, 14);
+    ctx.quadraticCurveTo(0, 22 + Math.random() * 4, 3, 14);
+    ctx.fillStyle = 'rgba(255,247,0,0.95)';
+    ctx.fill();
+
+    ctx.restore();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Deep space background
+    const bg = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W, H));
+    bg.addColorStop(0, '#05051a');
+    bg.addColorStop(1, '#000008');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Nebulae
+    nebulae.forEach(n => {
+        const dx = (mx - W/2) * 0.015;
+        const dy = (my - H/2) * 0.015;
+        const g = ctx.createRadialGradient(n.x+dx, n.y+dy, 0, n.x+dx, n.y+dy, n.r);
+        g.addColorStop(0, n.color);
+        g.addColorStop(1, 'transparent');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(n.x+dx, n.y+dy, n.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    // Mouse aura
+    const aura = ctx.createRadialGradient(mx, my, 0, mx, my, 180);
+    aura.addColorStop(0, 'rgba(0,247,255,0.06)');
+    aura.addColorStop(1, 'transparent');
+    ctx.fillStyle = aura;
+    ctx.beginPath();
+    ctx.arc(mx, my, 180, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Stars
+    stars.forEach(s => {
+        s.alpha += s.twinkleSpeed * s.twinkleDir;
+        if (s.alpha >= 1 || s.alpha <= 0.1) s.twinkleDir *= -1;
+        const dx = (mx - W/2) * s.speed * 0.003;
+        const dy = (my - H/2) * s.speed * 0.003;
+        ctx.beginPath();
+        ctx.arc(s.x+dx, s.y+dy, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = s.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    });
+
+    // Shooting stars
+    spawnShootingStar();
+    shootingStars = shootingStars.filter(s => s.alpha > 0);
+    shootingStars.forEach(s => {
+        const tx = s.x - Math.cos(s.angle) * s.len;
+        const ty = s.y - Math.sin(s.angle) * s.len;
+        const grad = ctx.createLinearGradient(tx, ty, s.x, s.y);
+        grad.addColorStop(0, 'transparent');
+        grad.addColorStop(1, `rgba(0,247,255,${s.alpha})`);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(tx, ty);
+        ctx.lineTo(s.x, s.y);
+        ctx.stroke();
+        s.x += Math.cos(s.angle) * s.speed;
+        s.y += Math.sin(s.angle) * s.speed;
+        s.alpha -= 0.012;
+    });
+
+    // Rocket smooth follow
+    const ddx = mx - px;
+    const ddy = my - py;
+    const dist = Math.sqrt(ddx*ddx + ddy*ddy);
+    if (dist > 1) {
+        angle = Math.atan2(ddy, ddx);
+        px += ddx * 0.12;
+        py += ddy * 0.12;
+        spawnExhaust(px, py, angle);
+    }
+
+    // Exhaust particles
+    particles = particles.filter(p => p.life > 0);
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color},${p.life * 0.7})`;
+        ctx.fill();
+        p.x += p.vx;
+        p.y += p.vy;
+        p.size *= 0.95;
+        p.life -= 0.04;
+    });
+
+    // Rocket on top of everything
+    drawRocket(px, py, angle);
+
+    requestAnimationFrame(draw);
+}
+
+window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+window.addEventListener('resize', () => { resize(); initStars(); });
+
+resize();
+initStars();
+draw();
+
+document.body.style.cursor = 'none';
+</script>
+
   </body>
 </html>
