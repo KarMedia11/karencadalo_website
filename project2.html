@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Karen Cadalo | Email Design Portfolio</title>
+  <link rel="icon" href="favicon-32x32.png" alt="Karen, the Email Designer" type="Logo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+  <style>
+    body {
+      color: white;
+      background: #000008;
+    }
+
+    .project-container {
+      max-width: 1000px;
+      margin: 60px auto 40px;
+      padding: 10px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .overview {
+      margin: 20px 0;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* ===== SLIDER ===== */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    /* keep slides as-is */
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+
+    }
+
+    /* ARROWS */
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px 14px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 6px;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.2s ease;
+      transform-origin: center;
+      cursor: zoom-in;
+    }
+
+    /* Zoomed state */
+    .slider img.zoomed {
+      transform: scale(1.8);
+      cursor: zoom-out;
+      z-index: 999;
+      position: relative;
+    }
+
+    /* LEFT */
+    .prev {
+      left: 10px;
+    }
+
+    /* RIGHT */
+    .next {
+      right: 10px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background: rgba(0, 247, 255, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="galaxy-canvas"></canvas>
+  <!-- ===== Navbar ===== -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><span>Karen Cadalo</span></div>
+
+      <div class="links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#projects">Works</a>
+        <a href="index.html#contact">Contact</a>
+
+        <div class="contact-btn">
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/1vQ45NZmSqB5-zTLp_2RTuUtvxN1woQE8/view">Download CV</a>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#projects">Works</a>
+        <a href="index.html#contact">Contact</a>
+        <a target="_blank" rel="noopener noreferrer"
+          href="https://drive.google.com/file/d/1vQ45NZmSqB5-zTLp_2RTuUtvxN1woQE8/view">Download CV</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PROJECT CONTENT -->
+  <div class="project-container">
+
+    <!-- TITLE -->
+    <h1>Mother’s Day | America & Beyond</h1>
+
+    <!-- OVERVIEW -->
+    <div class="overview">
+      This Mother’s Day campaign drives conversions with a limited-time 30% discount and relatable messaging focused on
+      appreciation.
+      <br /><br /> It simplifies shopping by categorizing products into curated personas, allowing customers to shop
+      based on their mom’s specific personality and lifestyle.
+      <br /><br />Utilizing a mobile-first design and strong visual hierarchy, the layout leverages a countdown timer
+      and repeated CTAs to reinforce the urgency of shipping deadlines.
+      <br /><br />
+    </div>
+
+    <!-- IMAGE SLIDER -->
+    <div class="slider">
+
+      <div class="slides" id="slides">
+        <img src="mother's day.png">
+        <img src="A&B STRIP.png">
+        <img src="mother1.png">
+        <img src="a&b phone.png">
+
+      </div>
+
+      <!-- NAV BUTTONS (INSIDE SLIDER) -->
+      <button class="prev" onclick="prevSlide()">❮</button>
+      <button class="next" onclick="nextSlide()">❯</button>
+
+    </div>
+
+    <section class="projects-section">
+      <h2>More Projects</h2>
+
+      <div class="projects-grid-5">
+
+
+        <a href="project1.html" class="project-item">
+          <img src="AMORETTI-MOCKUP.png" alt="Amoretti">
+          <p>Amoretti</p>
+        </a>
+
+        <a href="project3.html" class="project-item">
+          <img src="MOCKUP.gif" alt="Reign">
+          <p>Reign</p>
+        </a>
+
+        <a href="project4.html" class="project-item">
+          <img src="kloudy.png" alt="Kloudy">
+          <p>Kloudy</p>
+        </a>
+
+        <a href="project5.html" class="project-item">
+          <img src="PACSAFE-PHONE.png" alt="Pacsafe">
+          <p>Pacsafe</p>
+        </a>
+
+        <a href="project6.html" class="project-item">
+          <img src="vs-ipad.png" alt="Amoretti">
+          <p>Riviera</p>
+        </a>
+
+      </div>
+    </section>
+    <!-- JS -->
+    <script>
+      document.querySelectorAll(".slides img").forEach(img => {
+        let zoomed = false;
+
+        img.addEventListener("mouseenter", () => {
+          zoomed = true;
+          img.style.transform = "scale(2)";
+          img.style.cursor = "zoom-out";
+        });
+
+        img.addEventListener("mouseleave", () => {
+          zoomed = false;
+          img.style.transform = "scale(1)";
+          img.style.cursor = "zoom-in";
+          img.style.transformOrigin = "center";
+        });
+
+        img.addEventListener("mousemove", (e) => {
+          if (!zoomed) return;
+
+          const rect = img.getBoundingClientRect();
+
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xPercent = (x / rect.width) * 100;
+          const yPercent = (y / rect.height) * 100;
+
+          img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+        });
+      });
+      function hamburg() {
+        document.querySelector(".dropdown").style.transform = "translateY(0px)";
+      }
+
+      function cancel() {
+        document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+      }
+
+      /* ===== SLIDER LOGIC ===== */
+      let index = 0;
+
+      function showSlide() {
+        const slides = document.getElementById("slides");
+        slides.style.transform = `translateX(${-index * 100}%)`;
+      }
+
+      function nextSlide() {
+        const total = document.querySelectorAll("#slides img").length;
+        index = (index + 1) % total;
+        showSlide();
+      }
+
+      function prevSlide() {
+        const total = document.querySelectorAll("#slides img").length;
+        index = (index - 1 + total) % total;
+        showSlide();
+      }
+    </script>
+
+</body>
+
+</html>
