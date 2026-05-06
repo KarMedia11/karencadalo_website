@@ -45,23 +45,12 @@
     }
 }
 
-@media (max-width: 768px) {
-    nav {
-        height: auto;
-        padding: 10px 0;
-    }
 
-    #home {
-        min-height: 100vh;
-        display: flex;
-        align-items: flex-start;
-        padding-top: 90px;
-    }
 
     .main-container {
         margin-top: 20px;
     }
-}
+
 @media (max-width: 768px) {
     .typed-cursor {
         display: none;
@@ -80,14 +69,12 @@ body {
 }
 
 
-
-
 nav{
     width: calc(100% - 30px);
     height: 10vh;
     position: sticky;
     top: 10px;
-    left: 50%;
+    left: 0%;
     margin: 0 auto;
     z-index: 999;
     backdrop-filter: blur(12px) brightness(60%);
@@ -227,10 +214,20 @@ section{
     justify-content: center;   /* Center horizontally */
     align-items: center;       /* Center vertically */
     text-align: center;        /* Center text */
-    padding: 0;                /* Remove any default padding */
+     padding-top: 0;
+               /* Remove any default padding */
      background: url("header.png") center/cover no-repeat;
     position: relative;
   }
+
+  @media (max-width: 768px) {
+    #home {
+        padding-top: 0px;  /* reduce this */
+        min-height: calc(100vh - 70px);
+        align-items: center; /* IMPORTANT: removes “floating down” effect */
+    }
+}
+
 #home::before {
     content: "";
     position: absolute;
@@ -794,6 +791,18 @@ button {
         display: none !important;
     }
 }
+@media (max-width: 768px) {
+    nav {
+        height: 60px;
+        padding: 0;
+    }
+
+    .nav-container {
+        height: 100%;
+        align-items: center;
+        padding: 0 15px;
+    }
+}
 
 @media (max-width:884px) {
     body{
@@ -1028,14 +1037,21 @@ button {
     border: none;
     transition: background-color 0.3s ease;
   }
-
-  .projects-section {
+.projects-section {
   max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
+  margin: 40px auto 20px;
+  padding: 10px 20px;
   text-align: center;
 }
-
+.projects-section h2 {
+  margin-bottom: 20px;
+}
+.project-item p {
+  margin: 8px 0 0;
+}
+.projects-section:last-child {
+  margin-bottom: 0;
+}
 .projects-section h2 {
   margin-bottom: 20px;
 }
@@ -1064,7 +1080,7 @@ button {
 }
 
 .project-item p {
-  margin-top: 8px;
+
   font-size: 0.9rem;
 }
 
