@@ -40,7 +40,7 @@
   </head>
 
   <body>
-    <canvas id="galaxy-canvas"></canvas>
+   
     <header>
     <!-- ===== Navbar ===== -->
     <nav>
@@ -91,12 +91,12 @@
         <div class="content">
           <h1 class="typewriter"><span id="typed-text"></span></h1>
           <p>
-            I help DTC
+            I love helping
             <b><span class="no-break"> e-commerce brands</span></b>
-            by designing and building engaging email campaigns in Figma and
+            by crafting and implement engaging email campaigns in Figma and
             Klaviyo.
           </p>
-          <a href="#projects"><button>View My Work →</button></a>
+          <a href="#projects"><button>Show More →</button></a>
         </div>
       </div>
     </section>
@@ -132,7 +132,7 @@
 
   <!-- Project 2 -->
   <a href="project2.html" class="project-card">
-    <img class="img-color" src="mother's day.png" alt="Promotional Email Design" />
+    <img class="img-color" src="mother's day.png" alt="Promotional Email Design"  loading="lazy"> />
     <!-- <img class="img-gray" src="mother's day.png" alt="Promotional Email Design" /> -->
 
     <div class="overlay">
@@ -144,7 +144,7 @@
 
   <!-- Project 3 -->
   <a href="project3.html" class="project-card">
-    <img class="img-color" src="MOCKUP.gif" alt="Post Purchase Email Design" />
+    <img class="img-color" src="MOCKUP.gif" alt="Post Purchase Email Design"  loading="lazy"> />
     <!-- <img class="img-gray" src="post-purchase.png" alt="Post Purchase Email Design" /> -->
 
     <div class="overlay">
@@ -156,7 +156,7 @@
 
   <!-- Project 4 -->
   <a href="project4.html" class="project-card">
-    <img class="img-color" src="kloudy.png" alt="Clearance Sale Email Design" />
+    <img class="img-color" src="kloudy.png" alt="Clearance Sale Email Design"  loading="lazy"> />
 
 
     <div class="overlay">
@@ -168,7 +168,7 @@
 
   <!-- Project 5 -->
   <a href="project5.html" class="project-card">
-    <img class="img-color" src="PACSAFE-PHONE.png" alt="Browse Abandon Email Design" />
+    <img class="img-color" src="PACSAFE-PHONE.png" alt="Browse Abandon Email Design"  loading="lazy"> />
     <!-- <img class="img-gray" src="PACSAFE-VIDEO.mp4" alt="Browse Abandon Email Design" /> -->
 
     <div class="overlay">
@@ -180,7 +180,7 @@
 
   <!-- Project 6 -->
   <a href="project6.html" class="project-card">
-    <img class="img-color" src="vs-ipad.png" alt="Welcome Email Design" />
+    <img class="img-color" src="vs-ipad.png" alt="Welcome Email Design"  loading="lazy"> />
     <!-- <img class="img-gray" src="welcome.png" alt="Welcome Email Design" /> -->
 
     <div class="overlay">
@@ -299,7 +299,7 @@
     <script>
       // Typed.js initialization
       const typed = new Typed("#typed-text", {
-        strings: ["Your Next Email Designer<"],
+        strings: ["Your Next Email Designer"],
         typeSpeed: 60,
         backSpeed: 50,
 
@@ -350,192 +350,11 @@ form.addEventListener("submit", async (e) => {
       </p>
     </div>
 
-<script>
-const canvas = document.getElementById('galaxy-canvas');
-const ctx = canvas.getContext('2d');
-
-let W, H, stars = [], nebulae = [], shootingStars = [], particles = [];
-let mx = 0, my = 0, px, py, angle = -Math.PI / 2;
-
-function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    if (px === undefined) { px = W / 2; py = H / 2; }
-}
-
-function initStars() {
-    stars = [];
-    for (let i = 0; i < 280; i++) {
-        stars.push({
-            x: Math.random() * W,
-            y: Math.random() * H,
-            r: Math.random() * 1.8 + 0.2,
-            alpha: Math.random() * 0.7 + 0.3,
-            speed: Math.random() * 0.15 + 0.02,
-            twinkleSpeed: Math.random() * 0.02 + 0.005,
-            twinkleDir: Math.random() > 0.5 ? 1 : -1,
-            color: ['#ffffff','#cce8ff','#ffe8cc','#e8ccff'][Math.floor(Math.random() * 4)]
-        });
-    }
-    nebulae = [];
-    const nebulaColors = [
-        'rgba(0,100,255,0.04)',
-        'rgba(120,0,200,0.05)',
-        'rgba(0,200,180,0.04)',
-        'rgba(200,50,100,0.035)'
-    ];
-    for (let i = 0; i < 6; i++) {
-        nebulae.push({
-            x: Math.random() * W,
-            y: Math.random() * H,
-            r: Math.random() * 250 + 120,
-            color: nebulaColors[i % nebulaColors.length]
-        });
-    }
-}
-
-function spawnShootingStar() {
-    if (shootingStars.length < 3 && Math.random() < 0.004) {
-        shootingStars.push({
-            x: Math.random() * W,
-            y: Math.random() * H * 0.5,
-            len: Math.random() * 120 + 60,
-            speed: Math.random() * 8 + 5,
-            alpha: 1,
-            angle: Math.PI / 5
-        });
-    }
-}
-
-function spawnExhaust(x, y, ang) {
-    const exhaustAng = ang + Math.PI / 2 + Math.PI;
-    for (let i = 0; i < 2; i++) {
-        const spread = (Math.random() - 0.5) * 0.6;
-        const speed = Math.random() * 1.5 + 0.5;
-        particles.push({
-            x, y,
-            vx: Math.cos(exhaustAng + spread) * speed,
-            vy: Math.sin(exhaustAng + spread) * speed,
-            life: 1,
-            size: Math.random() * 3 + 1,
-            color: Math.random() > 0.5 ? '255,160,0' : '0,247,255'
-        });
-    }
-}
-
-
-
-function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    // Deep space background
-    const bg = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W, H));
-    bg.addColorStop(0, '#05051a');
-    bg.addColorStop(1, '#000008');
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, W, H);
-
-    // Nebulae
-    nebulae.forEach(n => {
-        const dx = (mx - W/2) * 0.015;
-        const dy = (my - H/2) * 0.015;
-        const g = ctx.createRadialGradient(n.x+dx, n.y+dy, 0, n.x+dx, n.y+dy, n.r);
-        g.addColorStop(0, n.color);
-        g.addColorStop(1, 'transparent');
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(n.x+dx, n.y+dy, n.r, 0, Math.PI * 2);
-        ctx.fill();
-    });
-
-    // Mouse aura
-    const aura = ctx.createRadialGradient(mx, my, 0, mx, my, 180);
-    aura.addColorStop(0, 'rgba(0,247,255,0.06)');
-    aura.addColorStop(1, 'transparent');
-    ctx.fillStyle = aura;
-    ctx.beginPath();
-    ctx.arc(mx, my, 180, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Stars
-    stars.forEach(s => {
-        s.alpha += s.twinkleSpeed * s.twinkleDir;
-        if (s.alpha >= 1 || s.alpha <= 0.1) s.twinkleDir *= -1;
-        const dx = (mx - W/2) * s.speed * 0.003;
-        const dy = (my - H/2) * s.speed * 0.003;
-        ctx.beginPath();
-        ctx.arc(s.x+dx, s.y+dy, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = s.color;
-        ctx.globalAlpha = s.alpha;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-    });
-
-    // Shooting stars
-    spawnShootingStar();
-    shootingStars = shootingStars.filter(s => s.alpha > 0);
-    shootingStars.forEach(s => {
-        const tx = s.x - Math.cos(s.angle) * s.len;
-        const ty = s.y - Math.sin(s.angle) * s.len;
-        const grad = ctx.createLinearGradient(tx, ty, s.x, s.y);
-        grad.addColorStop(0, 'transparent');
-        grad.addColorStop(1, `rgba(0,247,255,${s.alpha})`);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(tx, ty);
-        ctx.lineTo(s.x, s.y);
-        ctx.stroke();
-        s.x += Math.cos(s.angle) * s.speed;
-        s.y += Math.sin(s.angle) * s.speed;
-        s.alpha -= 0.012;
-    });
-function drawRocket(x, y, angle) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.rotate(angle);
-
-  ctx.fillStyle = "white";
-  ctx.beginPath();
-  ctx.moveTo(10, 0);
-  ctx.lineTo(-10, 6);
-  ctx.lineTo(-10, -6);
-  ctx.closePath();
-  ctx.fill();
-
-  ctx.restore();
-}
-
-    // Exhaust particles
-    particles = particles.filter(p => p.life > 0);
-    particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color},${p.life * 0.7})`;
-        ctx.fill();
-        p.x += p.vx;
-        p.y += p.vy;
-        p.size *= 0.95;
-        p.life -= 0.04;
-    });
-
-
-
-    requestAnimationFrame(draw);
-}
-
-
-window.addEventListener('resize', () => { resize(); initStars(); });
-
-resize();
-initStars();
-draw();
-
-document.body.style.cursor = 'none';
-</script>
 
 <script>
 const tab = document.getElementById("subscribe-tab");
+
+
 
 // open popup
 tab.addEventListener("click", function () {
