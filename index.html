@@ -85,9 +85,7 @@
 
     <!-- ===== Main Section ===== -->
     <section id="home">
-      
       <div class="main-container">
-        
         <div class="content">
           <h1 class="typewriter"><span id="typed-text"></span></h1>
           <p>
@@ -96,10 +94,42 @@
             by crafting and implement engaging email campaigns in Figma and
             Klaviyo.
           </p>
-          <a href="#projects"><button>Show More →</button></a>
+          <a href="#projects"><button>Let's Work Together →</button></a>
         </div>
       </div>
     </section>
+      <section id="email-carousel">
+  <div class="carousel-header">
+    <h2>Email Design Highlights</h2>
+  </div>
+
+  <div class="carousel-wrapper">
+
+    <div class="carousel-track">
+
+      <div class="carousel-card">
+        <img src="Riviera.png" alt="Email Design 1" />
+      </div>
+
+      <div class="carousel-card">
+        <img src="Allbirds.png" alt="Email Design 2" />
+      </div>
+
+      <div class="carousel-card">
+        <img src="kloudy-laptop.png" alt="Email Design 3" />
+      </div>
+
+      <div class="carousel-card">
+        <img src="Riviera.png" alt="Email Design 4" />
+      </div>
+
+      <div class="carousel-card">
+        <img src="Riviera.png" alt="Email Design 5" />
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- PROJECTS — 2 rows × 6 columns -->
     <section id="projects">
       <div class="section-header">
@@ -115,6 +145,8 @@
           </span>
         </p>
       </div>
+
+    
 
      <div class="projects-grid">
 
@@ -132,7 +164,7 @@
 
   <!-- Project 2 -->
   <a href="project2.html" class="project-card">
-    <img class="img-color" src="mother's day.png" alt="Promotional Email Design"  loading="lazy"> />
+    <img class="img-color" src="mother1.png" alt="Promotional Email Design"  loading="lazy"> />
     <!-- <img class="img-gray" src="mother's day.png" alt="Promotional Email Design" /> -->
 
     <div class="overlay">
@@ -383,5 +415,24 @@ function checkCalendlyClosed() {
 }
 </script>
 
+<script>
+const track = document.querySelector(".carousel-wrapper");
+
+let scrollAmount = 0;
+
+setInterval(() => {
+  scrollAmount += 320;
+
+  if (scrollAmount >= track.scrollWidth - track.clientWidth) {
+    scrollAmount = 0;
+  }
+
+  track.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth"
+  });
+
+}, 3000);
+</script>
   </body>
 </html>

@@ -101,8 +101,8 @@ nav{
 
 .logo span{
     font-family: "Montserrat", serif;
-    color: rgb(0, 247, 255);
-    text-shadow: 0 0 10px rgb(0, 247, 255);
+    color: rgb(245, 245, 250);
+    text-shadow: 0 0 10px rgb(47, 47, 228);
 }
 @media (max-width:884px) {
     .hamburg,.cancel{
@@ -144,7 +144,7 @@ nav{
     left: 0;
     width: 0%;
     height: 3px;
-    background-color:rgb(0, 247, 255);
+    background-color:rgb(255, 176, 0)s;
     transition: 0.2s linear;
 }
 
@@ -156,7 +156,7 @@ nav{
     background-color: transparent;
     padding: 5px 20px;
     border-radius: 20px;
-    border: 2px solid rgb(0, 247, 255);
+    border: 2px solid rgb(255, 176, 0);
     transition: 0.2s linear;
 }
 
@@ -166,7 +166,7 @@ nav{
 }
 
 .nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
-    background-color: rgb(0, 247, 255);
+    background-color: rgb(255, 176, 0);
     color: white;
 }
 
@@ -198,7 +198,7 @@ nav{
 }
 
 .dropdown .links a:hover{
-    background-color: rgb(0, 247, 255);
+    background-color: rgb(255, 176, 0);
 }
 
 section{
@@ -235,7 +235,7 @@ section{
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.95) 0%,
-        rgba(104, 27, 27, 0.9) 60%,
+        rgb(47, 47, 228) 40%,
         rgba(0, 0, 0, 1) 100%
     );
     z-index: 0;
@@ -288,7 +288,7 @@ h1.content .typewriter {
 
 .content .typewriter span {
     font-family: "Montserrat", serif;
-    color: rgb(0, 247, 255);
+    color:rgb(245, 245, 250);
     text-shadow: 0 0 5px rgb(9, 0, 0);
 
     justify-content: center;
@@ -310,7 +310,7 @@ h1.content .typewriter {
     background-color:transparent;
     border: 0.2rem solid rgb(255, 252, 251);
     border-radius: 50%;
-    rgb(0, 247, 255)
+    rgb(245, 245, 250)
     margin: 5px 20px;
     font-size: 1.5rem;
     transition: 0.2s linear;
@@ -331,7 +331,7 @@ h1.content .typewriter {
 .social-links i:hover{
     scale: 1.3;
     color: white;
-    background-color: rgb(0, 247, 255);
+    background-color: rgb(244, 162, 97);
     filter: drop-shadow(0 0 10px rgb(109,67,0));
 }
 
@@ -351,9 +351,9 @@ h1.content .typewriter {
     display: inline-block;
     margin-right: 10px;
     padding: 8px 12px;
-    border: 1px solid rgb(0, 247, 255);
+    border: 1px solid rgb(245, 245, 250);
     border-radius: 20px;
-    color: rgb(0, 247, 255);
+    color: rgb(245, 245, 250);
     font-size: 14px;
   }
 
@@ -366,7 +366,7 @@ h1.content .typewriter {
     display: block;       
         /* Needed for centering */
     
-    background-color: rgb(0, 247, 255);
+    background-color: rgb(255, 176, 0);
     color: black;
     border: none;
     
@@ -382,13 +382,13 @@ h1.content .typewriter {
 }
 
 .content b{
-    color: rgb(0, 247, 255);
+    color: rgb(245, 245, 250);
 }
 
 .content button:hover{
  scale: 1.1;
- color: rgb(255, 252, 251);
- border: 2px solid rgb(0, 247, 255);
+ color: rgb(244, 162, 97);
+ border: 2px solid rgb(244, 162, 97);
  background-color: transparent;
  font-weight: 700;
  box-shadow: 0 0 40px rgb(9, 63, 180);
@@ -558,7 +558,7 @@ h1.content .typewriter {
 }
 
 .highlight {
-    color: rgb(0, 247, 255);
+    color: rgb(255, 176, 0);
 }
 
 .tools {
@@ -618,13 +618,7 @@ h1.content .typewriter {
     margin: auto
 }
 
-#contact-form {
-    margin: 0 auto; /* 🔥 forces horizontal center */
-    margin-bottom: 10px;  
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-}
+
 
 .contact-form h1 {
     font-size: 2rem;
@@ -715,7 +709,7 @@ textarea {
 
 
 button {
-    background-color: rgb(0, 247, 255);
+    background-color: rgb(255, 176, 0);
     color: black;
     padding: 12px;
     border: none;
@@ -793,18 +787,18 @@ button {
 }
 @media (max-width: 768px) {
     nav {
-        height: 60px;
-        padding: 0;
+    height: 60px;
+    position: sticky;
+    top: 0;
     }
 
     .nav-container {
-        height: 100%;
-        align-items: center;
+        justify-content: space-between;
         padding: 0 15px;
     }
 }
 
-@media (max-width:884px) {
+@media (max-width:768px) {
     body{
         overflow-y: visible;
     }
@@ -823,14 +817,15 @@ button {
     }
 
     .nav-container .links{
-          display: none !important;
+        display: none;
     }
 
 
     .hamburg,.cancel{
-       display: block !important;
-        position: static; /* 🔥 let flex handle it */
-           display: block;
+        display: block !important;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: white;
     }
     
 
@@ -896,7 +891,7 @@ button {
     bottom: 20px;
 
     padding: 12px 18px;
-    background: #00F7FF;
+    background: rgb(255, 176, 0);
     color: black;
 
     font-weight: 600;
@@ -1046,9 +1041,7 @@ button {
 .projects-section h2 {
   margin-bottom: 20px;
 }
-.project-item p {
-  margin: 8px 0 0;
-}
+
 .projects-section:last-child {
   margin-bottom: 0;
 }
@@ -1122,4 +1115,76 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+    #email-carousel {
+        padding: 80px 20px;
+        background: #000008;
+        color: white;
+        text-align: center;
+    }
+
+.carousel-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.carousel-header p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+}
+
+/* wrapper */
+.carousel-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* hide scrollbar */
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* track */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* cards */
+.carousel-card {
+    width: 280px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-card:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+    .carousel-card {
+        width: 60vw;      /* takes most of screen */
+        height: 600px;    /* still tall but not overwhelming */
+    }
+    #email-carousel {
+        padding: 60px 10px;
+    }
+
+    .carousel-track {
+        gap: 12px;
+    }
 }
