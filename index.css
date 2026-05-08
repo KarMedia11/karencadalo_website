@@ -362,7 +362,7 @@ h1.content .typewriter {
     min-width: 200px;         /* Keeps it usable */
     padding: 12px 24px;       /* Better spacing */
     height: auto;             /* Remove vh dependency */
-    margin: 20px auto;        /* Center it */
+    margin: 40px auto;        /* Center it */
     display: block;       
         /* Needed for centering */
     
