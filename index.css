@@ -144,7 +144,13 @@ nav{
     left: 0;
     width: 0%;
     height: 3px;
-    background-color:rgb(255, 176, 0)s;
+background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     transition: 0.2s linear;
 }
 
@@ -156,7 +162,13 @@ nav{
     background-color: transparent;
     padding: 5px 20px;
     border-radius: 20px;
-    border: 2px solid rgb(255, 176, 0);
+  background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     transition: 0.2s linear;
 }
 
@@ -166,12 +178,18 @@ nav{
 }
 
 .nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
-    background-color: rgb(255, 176, 0);
-    color: white;
+   background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
+    color: black;
 }
 
 .nav-container .links a:hover{
-    color: rgb(255, 252, 251);
+    color: rgb(0, 0, 0);
 }
 
 .dropdown{
@@ -198,7 +216,14 @@ nav{
 }
 
 .dropdown .links a:hover{
-    background-color: rgb(255, 176, 0);
+    background-color: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
+    
 }
 
 section{
@@ -234,11 +259,11 @@ section{
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgb(47, 47, 228) 40%,
-        rgba(0, 0, 0, 1) 100%
+        rgba(0, 0, 0, 0.7) 0%,
+        rgb(52, 52, 86) 40%,
+        rgba(0, 0, 0, 0.9) 100%
     );
-    z-index: 0;
+    z-index: 1;
 }
 #home .main-container {
     position: relative;
@@ -331,7 +356,14 @@ h1.content .typewriter {
 .social-links i:hover{
     scale: 1.3;
     color: white;
-    background-color: rgb(244, 162, 97);
+    background-color: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
+
     filter: drop-shadow(0 0 10px rgb(109,67,0));
 }
 
@@ -366,7 +398,13 @@ h1.content .typewriter {
     display: block;       
         /* Needed for centering */
     
-    background-color: rgb(255, 176, 0);
+    background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     color: black;
     border: none;
     
@@ -387,8 +425,14 @@ h1.content .typewriter {
 
 .content button:hover{
  scale: 1.1;
- color: rgb(244, 162, 97);
- border: 2px solid rgb(244, 162, 97);
+ color: white;
+ border: 2px solid  linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
  background-color: transparent;
  font-weight: 700;
  box-shadow: 0 0 40px rgb(9, 63, 180);
@@ -558,7 +602,13 @@ h1.content .typewriter {
 }
 
 .highlight {
-    color: rgb(255, 176, 0);
+    color:  linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
 }
 
 .tools {
@@ -669,7 +719,13 @@ textarea {
 }
 
 .calendly-btn button {
-    background-color: rgb(0, 247, 255);
+    background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     color: black;
     padding: 12px 24px;
     border: none;
@@ -709,7 +765,13 @@ textarea {
 
 
 button {
-    background-color: rgb(255, 176, 0);
+    background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     color: black;
     padding: 12px;
     border: none;
@@ -891,7 +953,13 @@ button {
     bottom: 20px;
 
     padding: 12px 18px;
-    background: rgb(255, 176, 0);
+       background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     color: black;
 
     font-weight: 600;
@@ -995,7 +1063,13 @@ button {
 .footerBottom {
     width: 100%;
     padding: 15px 0;
-    background-color: rgb(0, 247, 255); /* match your site’s blue */
+      background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+); /* match your site’s blue */
     text-align: center;
     color: black;
     font-size: 0.9rem;
@@ -1023,7 +1097,13 @@ button {
 }
 
 .confirm {
-    background-color: #00F7FF !important; /* Change this to your desired button color */
+      background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+); !important; /* Change this to your desired button color */
     color: #2B2A2A !important;           /* Change this to your desired text color */
     border-radius: 6px;
     font-weight: 600;
@@ -1109,7 +1189,13 @@ textarea {
 }
 
 button {
-    background-color: rgb(0, 247, 255);
+        background: linear-gradient(
+  to right,
+  #5fe3e3 0%,
+  #3bb6dc 40%,
+  #1e88e5 70%,
+  #0a5bc4 100%
+);
     color: black;
     padding: 12px;
     border: none;
@@ -1135,11 +1221,19 @@ button {
     margin-bottom: 40px;
 }
 
-/* wrapper */
 .carousel-wrapper {
     overflow-x: auto;
+       overflow-y: hidden;
+        cursor: grab;
+    display: flex;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+}
+
+.carousel-wrapper.dragging {
+  cursor: grabbing;
 }
 
 /* hide scrollbar */
@@ -1147,20 +1241,25 @@ button {
     display: none;
 }
 
-/* track */
 .carousel-track {
     display: flex;
     gap: 20px;
-    padding: 10px;
+    width: max-content; 
+    -webkit-overflow-scrolling: touch;
 }
 
 /* cards */
 .carousel-card {
-    width: 280px;
-    height: 600px;
+    width: 320px;
+    height: 900px;
     border-radius: 20px;
     overflow: hidden;
+      scroll-snap-align: center;
     flex: 0 0 auto;
+    
+     position: relative;
+      pointer-events: auto;
+     overflow: visible;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
@@ -1174,11 +1273,78 @@ button {
     transform: scale(1.05);
 }
 
+/* tooltip */
+.carousel-card::after {
+  content: attr(data-title);
+
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(10px);
+
+  background: rgba(0,0,0,0.8);
+  color: white;
+
+  padding: 8px 14px;
+  border-radius: 30px;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(6px);
+}
+
+/* show on hover */
+.carousel-card:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* floating hover tag */
+.hover-tag {
+position: absolute;
+
+    background: rgba(25, 25, 35, 0.95);
+    color: white;
+
+    padding: 6px 12px;
+    border: 1px solid orange;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 4px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 999999;
+
+    white-space: nowrap;
+
+    display: block;
+}
+/* show on hover */
+.carousel-card:hover .hover-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 @media (max-width: 768px) {
 
     .carousel-card {
-        width: 60vw;      /* takes most of screen */
-        height: 600px;    /* still tall but not overwhelming */
+        width: 320px;      /* takes most of screen */
+        height: 1000px;    /* still tall but not overwhelming */
     }
     #email-carousel {
         padding: 60px 10px;
@@ -1187,4 +1353,54 @@ button {
     .carousel-track {
         gap: 12px;
     }
+}
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+
+  background: rgba(0,0,0,0.9);
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.lightbox-wrapper {
+  overflow: hidden;
+  max-width: 95vw;
+  max-height: 95vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 100%;
+  max-height: 95vh;
+
+  transition: transform 0.2s ease;
+  cursor: grab;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-content:active {
+  cursor: grabbing;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000;
 }
