@@ -158,7 +158,7 @@
     <!-- PROJECTS — 2 rows × 6 columns -->
     <section id="projects">
       <div class="section-header">
-        <h2>Mockups</h2>
+        <h2>Recent</h2>
         <p class="mobile-hint">
           <span class="desktop-text">
             <!-- 😊 Check all my designs on  
@@ -344,16 +344,14 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
       // Typed.js initialization
-      const typed = new Typed("#typed-text", {
-        strings: ["Your Next Email Designer"],
-        typeSpeed: 60,
-        backSpeed: 50,
-
-
-        showCursor: true,
-        cursorChar: "|",
-      });
-
+window.addEventListener("load", () => {
+  new Typed("#typed-text", {
+    strings: ["Your Next Email Designer"],
+    typeSpeed: 60,
+    backSpeed: 50,
+    showCursor: true,
+  });
+});
       // Navbar toggle
       function hamburg() {
         document.querySelector(".dropdown").style.transform = "translateY(0px)";
@@ -398,35 +396,14 @@
 
 
     <script>
-      const tab = document.getElementById("subscribe-tab");
+const tab = document.getElementById("subscribe-tab");
 
-
-
-      // open popup
-      tab.addEventListener("click", function () {
-
-        tab.style.display = "none";
-
-        Calendly.initPopupWidget({
-          url: "https://calendly.com/cadalo-karen/15-min-discovery-call"
-        });
-
-        checkCalendlyClosed();
-      });
-
-      // detect popup close
-      function checkCalendlyClosed() {
-        const interval = setInterval(() => {
-
-          const popup = document.querySelector(".calendly-overlay");
-
-          if (!popup) {
-            tab.style.display = "flex";
-            clearInterval(interval);
-          }
-
-        }, 500);
-      }
+tab.addEventListener("click", function () {
+  window.open(
+    "https://calendly.com/cadalo-karen/15-min-discovery-call",
+    "_blank"
+  );
+});
     </script>
 
     <script>
@@ -452,13 +429,17 @@ function autoScroll() {
       document.querySelectorAll(".carousel-card").forEach(card => {
         const tag = card.querySelector(".hover-tag");
 
-        card.addEventListener("mousemove", (e) => {
-          const rect = card.getBoundingClientRect();
+let lastMove = 0;
 
-          tag.style.left = (e.clientX - rect.left + 10) + "px";
-          tag.style.top = (e.clientY - rect.top + 10) + "px";
-        });
+card.addEventListener("mousemove", (e) => {
+  const now = performance.now();
+  if (now - lastMove < 16) return; // ~60fps throttle
+  lastMove = now;
 
+  const rect = card.getBoundingClientRect();
+  tag.style.left = (e.clientX - rect.left + 10) + "px";
+  tag.style.top = (e.clientY - rect.top + 10) + "px";
+});
         card.addEventListener("mouseenter", () => {
           tag.style.opacity = "1";
         });
@@ -535,14 +516,18 @@ function autoScroll() {
       });
 
       // DRAG MOVE
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
+let raf = null;
 
-        posX = e.clientX - startX;
-        posY = e.clientY - startY;
+window.addEventListener('pointermove', (e) => {
+  if (!isDragging) return;
 
-        updateTransform();
-      });
+  cancelAnimationFrame(raf);
+  raf = requestAnimationFrame(() => {
+    posX = e.clientX - startX;
+    posY = e.clientY - startY;
+    updateTransform();
+  });
+});
 
       // DRAG END
       window.addEventListener('mouseup', () => {
