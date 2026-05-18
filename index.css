@@ -1223,13 +1223,13 @@ button {
 
 .carousel-wrapper {
     overflow-x: auto;
-       overflow-y: hidden;
-        cursor: grab;
+    overflow-y: hidden;
+    cursor: grab;
     display: flex;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
+    touch-action: auto;
 }
 
 .carousel-wrapper.dragging {
